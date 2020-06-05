@@ -8,11 +8,11 @@ namespace PierresTreat.Controllers
 {
   public class AccountController : Controller
   {
-    private readonly RecipeBoxContext _db;
+    private readonly PierresTreatContext _db;
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
 
-    public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RecipeBoxContext db)
+    public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, PierresTreatContext db)
     {
       _userManager = userManager;
       _signInManager = signInManager;

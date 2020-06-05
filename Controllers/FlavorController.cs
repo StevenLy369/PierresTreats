@@ -29,7 +29,7 @@ namespace PierresTreat.Controllers
     [HttpPost]
     public ActionResult Create(Flavor flavor)
     {
-      _db.Tags.Add(flavor);
+      _db.Flavors.Add(flavor);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
@@ -38,8 +38,8 @@ namespace PierresTreat.Controllers
     {
       var thisFlavor = _db.Flavors
           .Include(flavor => flavor.Treats)
-          .ThenInclude(join => join.Treats)
-          .FirstOrDefault(flavor => flavor.Flavor == id);
+          .ThenInclude(join => join.Treat)
+          .FirstOrDefault(flavor => flavor.FlavorId == id);
       return View(thisFlavor);
     }
 
