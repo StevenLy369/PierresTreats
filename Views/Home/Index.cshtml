@@ -1,8 +1,13 @@
 @{
   Layout = "_Layout";
 }
-
+@using System.Security.Claims
 <h2>Welcome to Pierres Treats!</h2>
+@if (User.Identity.IsAuthenticated)
+  {
+      <p>Welcome Back @User.Identity.Name!</p>
+     
+  }
 
     
 <p>@Html.ActionLink("See all Treats", "Index", "Treats")</p>
