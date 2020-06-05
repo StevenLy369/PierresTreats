@@ -27,8 +27,13 @@ dotnet ef database update
 ## Specs
 | Spec | Input | OutPut |
 |:----------- | :-----------------| :---------------|
-| User can create a stylist | Name: "Charlie" and Detail: "Works hard" | Output: Name: Charlie Detail: Works hard|
-| User can create a client | Name: "John" Stylist: "Charlie" | Output: Name: John Stylist: Charlie
+| Logged in User can create/delete a treat | Name: "Ice Cream" and Flavor: "Chocolate" | Output: Name: Ice Cream Flavor:Chocolate|
+| Logged in User can create/delete a flavor | Flavor: "Chocolate | Flavor: Chocolate |
+| Logged in User can edit a treat | Name: "Ice Cream" and Flavor: "Strawberry" | Output: Name: Ice Cream Flavor:Strawberry|
+| NonLogged in User cannot edit a treat | Name: "Ice Cream" and Flavor: "Strawberry" | Output: Please Login|
+| Nonlogged in users cannot create/delete a treat | Name: Donuts and Flavor: "Strawberry | Output: Please Login|
+| Nonlogged in users cannot create/delete a flavor | Flavor: "Strawberry | Output: Please Login|
+
 
 
 
@@ -47,6 +52,8 @@ If you have any suggestions or questions please message me on github
 * MySQL
 * Entity Framework Core
 * MVC
+* Core Identity
+
 
 ### License
 
