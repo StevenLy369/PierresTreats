@@ -21,13 +21,6 @@ namespace PierresTreat.Controllers
       _userManager = userManager;
       _db = db;
     }
-    // public async Task<ActionResult> Index()
-    // {
-    //   var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-    //   var currentUser = await _userManager.FindByIdAsync(userId);
-    //   var userTreats = _db.Treats.Where(entry => entry.User.Id == currentUser.Id);
-    //   return View(userTreats);
-    // }
       public ActionResult Index()
     {
       List<Treat> model = _db.Treats.ToList();
@@ -117,23 +110,7 @@ namespace PierresTreat.Controllers
       return RedirectToAction("Index");
     }
 
-    // [Authorize]
-    // [HttpPost]
-    // public ActionResult Delete(int id)
-    // {
-    //   var thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatId == id);
-    //   return View(thisTreat);
-    // }
-
-    // [HttpPost, ActionName("Delete")]
-    // public ActionResult DeleteConfirmed(int id)
-    // {
-    //   var thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatId == id);
-    //   _db.Treats.Remove(thisTreat);
-    //   _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
-
+   
 
   }
 }
