@@ -9,6 +9,6 @@ namespace PierresTreat.Models
     public DbSet<Treat> Treats { get; set; }
     public DbSet<FlavorTreat> FlavorTreat { get; set; }
 
-    public RecipeBoxContext(DbContextOptions options) : base(options) { }
+    public PierresTreatContext(DbContextOptions options) : base(options) { }
   }
 }

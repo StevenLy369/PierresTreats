@@ -3,24 +3,24 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace RecipeBox.Models
+namespace PierresTreat.Models
 {
-  public class RecipeBoxContextFactory : IDesignTimeDbContextFactory<RecipeBoxContext>
+  public class PierresTreatContextFactory : IDesignTimeDbContextFactory<PierresTreatContext>
   {
 
-    RecipeBoxContext IDesignTimeDbContextFactory<RecipeBoxContext>.CreateDbContext(string[] args)
+    PierresTreatContext IDesignTimeDbContextFactory<PierresTreatContext>.CreateDbContext(string[] args)
     {
       IConfigurationRoot configuration = new ConfigurationBuilder()
           .SetBasePath(Directory.GetCurrentDirectory())
           .AddJsonFile("appsettings.json")
           .Build();
 
-      var builder = new DbContextOptionsBuilder<RecipeBoxContext>();
+      var builder = new DbContextOptionsBuilder<PierresTreatContext>();
       var connectionString = configuration.GetConnectionString("DefaultConnection");
 
       builder.UseMySql(connectionString);
 
-      return new RecipeBoxContext(builder.Options);
+      return new PierresTreatContext(builder.Options);
     }
   }
 }
